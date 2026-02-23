@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.feature-card, .waitlist-card').forEach(el => {
+    document.querySelectorAll('.feature-card, .waitlist-card, .about-content, .stat-card, .faq-item, .contact-card, .promise-card, .promise-item').forEach(el => {
         el.style.opacity = '0'; // Start hidden for observer
         observer.observe(el);
     });

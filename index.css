@@ -416,16 +416,233 @@ nav {
     }
 }
 
-/* Footer */
-footer {
+/* Promise Section */
+.promise {
     padding: 4rem 0;
-    border-top: 1px solid var(--border);
 }
 
-.footer-content {
+.promise-card {
+    background: linear-gradient(135deg, rgba(0, 230, 118, 0.05), rgba(0, 0, 0, 0.5));
+    border: 1px solid var(--primary);
+    border-radius: 40px;
+    padding: 5rem 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.promise-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, var(--primary-glow) 0%, transparent 60%);
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.promise-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+}
+
+.promise-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.promise-card h2 {
+    font-size: 3rem;
+}
+
+.promise-card h2 span {
+    color: var(--primary);
+}
+
+.promise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.promise-item {
     display: flex;
-    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.check {
+    background: var(--primary);
+    color: #000;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.promise-text h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.promise-text p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+/* About Section */
+.about {
+    padding: 6rem 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-content p {
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.stat-card h4 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+/* FAQ Section */
+.faq {
+    padding: 6rem 0;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 24px;
+}
+
+.faq-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.faq-item p {
+    color: var(--text-dim);
+}
+
+/* Contact Section */
+.contact {
+    padding: 6rem 0;
+}
+
+.contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card h2 span {
+    color: var(--primary);
+}
+
+.contact-details {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-item {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* Footer Links */
+.footer-links {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+/* Footer Navigation Fix */
+.footer-content {
+    flex-direction: column;
 }
 
 .footer-logo {
@@ -512,8 +729,20 @@ footer {
         color: var(--text-main);
     }
 
-    .feature-grid {
+    .feature-grid,
+    .about-grid,
+    .about-stats,
+    .footer-links {
         grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-grid {
+        gap: 2rem;
+    }
+
+    .text-left {
+        text-align: center !important;
     }
 
     .waitlist-card {
